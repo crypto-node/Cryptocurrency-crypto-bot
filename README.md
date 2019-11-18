@@ -1,7 +1,7 @@
 # Cryptocurrency-crypto-bot
 Cryptocurrency-crypto-bot is an open-source Node.js wallet bot for Discord. (Deposit,Withdraw,Stake,Tip,Rain,Drop...)
 
-## This bot is fully functional and ready to use. I accept no liability for errors in the code or incorrect use of the bot. I have decided to publish the bot to provide other developers with a basis to continue development. This repo will not get maintained or updated. Please do not send me any requests for support or installation assistance.
+## This bot is fully functional and ready to use. I have decided to publish the bot to provide other developers with a basis to continue development. This repo will not get maintained or updated. Please do not send me any requests for support or installation assistance.
 
 ### BOT COMMANDS
 **+register | +r**  
