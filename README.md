@@ -41,6 +41,12 @@
 *Manually get latest transactions from wallet and update confirmations.*  
 **+creditdeposits | +cd**  
 *Manually check confiramtions on database and credit deposits if they have min confirmations.*  
+**+getstakes || +gs**   
+*Manually check transactions on database if they are stakes.*  
+**+creditstakes || +cs**  
+*Manually credit stakes to users.*
+**+clear || +c**  
+*Delete all visible messages from chat.*
 
 ### Additional information
 
