@@ -73,4 +73,4 @@ walletnotify=/path/to/your/bot/folder/transaction.sh %s
 4. Check if transactionns are coming in to database
 
 ## Projects using the bot - Feel free to contact me to get added
-- Limitless (VIP) - Discord: https://discord.gg/wtz6QYX - Website: http://limitlessvip.co.za/ 
+- Limitless (VIP) - Discord: https://discord.gg/wtz6QYX - Website: http://vip.limitlessvip.co.za/
