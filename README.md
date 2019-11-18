@@ -12,7 +12,7 @@ Cryptocurrency-crypto-bot is an open-source Node.js wallet bot for Discord. (Dep
 *Display your current balance.*  
 **+deposit | +d**  
 *Get your deposit address.*  
-
+**+withdraw <address> <amount> | +w <address> <amount>**  
 *Withdraw balance to an address (0.01 VIP transaction fee will be added on top of the amount).*  
 **+stake <amount>**  
 *Convert balance to stake balance for receiving stake pool payouts. (Its always possible to add balance but it will reset the unstake timer)*  
