@@ -71,3 +71,6 @@ staking=1
 walletnotify=/path/to/your/bot/folder/transaction.sh %s  
 3. Enalbe staking options on the config file  
 4. Check if transactionns are coming in to database
+
+## Projects using the bot - Feel free to contact me to get added
+- Limitless (VIP) - Discord: https://discord.gg/wtz6QYX - Website: http://limitlessvip.co.za/
