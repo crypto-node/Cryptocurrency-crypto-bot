@@ -1,7 +1,7 @@
 # Cryptocurrency-crypto-bot is an open-source Node.js wallet bot for Discord.
 
-> BOT COMMANDS
-```+register | +r```  
+### BOT COMMANDS
+> ```+register | +r```  
 Register an account with the bot.  
 ```+profile | +p```  
 Display account information.  
@@ -32,8 +32,8 @@ Enable or disable to get mentioned by the bot.
 ```+version | +v```  
 Get current bot and wallet information.  
 
-> ADMIN COMMANDS
-```+start / +stop```  
+### ADMIN COMMANDS
+> ```+start / +stop```  
 Enable/Disable all bot commands while the bot is running.  
 ```+getdeposits | +gd```   
 Manually get latest transactions from wallet and update confirmations.  
