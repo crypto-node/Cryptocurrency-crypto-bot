@@ -1,5 +1,8 @@
 # Cryptocurrency-crypto-bot is an open-source Node.js wallet bot for Discord.
 
+### Preview pictures
+
+
 ### BOT COMMANDS
 > ```+register | +r```  
 Register an account with the bot.  
