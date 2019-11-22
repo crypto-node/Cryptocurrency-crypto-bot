@@ -41,7 +41,7 @@ Enable/Disable all bot commands while the bot is running.
 ```+getdeposits | +gd```   
 Manually get latest transactions from wallet and update confirmations.  
 ```+creditdeposits | +cd```  
-Manually check confiramtions on database and credit deposits if they have min confirmations.  
+Manually check confirmations on database and credit deposits if they have min confirmations.  
 ```+getstakes || +gs```   
 Manually check transactions on database if they are stakes.  
 ```+creditstakes || +cs```  
@@ -75,3 +75,4 @@ walletnotify=/path/to/your/bot/folder/transaction.sh %s
 
 ## Projects using the bot - Feel free to contact me to get added
 - Limitless (VIP) - Discord: https://discord.gg/wtz6QYX - Website: http://vip.limitlessvip.co.za/
+- BARE Coin (BARE) - Discord: https://discord.gg/xmQbzNH - Website: https://bare.network/
