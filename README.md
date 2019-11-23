@@ -75,3 +75,4 @@ walletnotify=/path/to/your/bot/folder/transaction.sh %s
 
 ## Projects using the bot - Feel free to contact me to get added
 - Limitless (VIP) - Discord: https://discord.gg/wtz6QYX - Website: http://vip.limitlessvip.co.za/
+- BAREcoin (BARE) - https://discord.gg/nB9rKe8 - Website: https://bare.network/
