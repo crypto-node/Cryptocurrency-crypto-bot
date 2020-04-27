@@ -791,7 +791,7 @@ module.exports = {
                 var deposit_category = latestDeposits[i].category;
                 var deposit_amount = Big(latestDeposits[i].amount).toString();
                 var deposit_confirmations = latestDeposits[i].confirmations;
-                var deposit_txid = latestDeposits[i].txid;
+                var deposit_txid = latestDeposits[i].txid + ' ' + deposit_address;
                 var deposit_generated = latestDeposits[i].generated; // Check if its a stake so not use it
                 if(deposit_category === 'receive' && !deposit_generated && deposit_confirmations < config.wallet.minConfirmationsDeposit){
                     var creditDeposit = await transaction.transaction_add_update_deposits_on_db(deposit_address,Big(deposit_amount).toString(),deposit_confirmations,deposit_txid);

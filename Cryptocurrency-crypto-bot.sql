@@ -45,7 +45,7 @@ CREATE TABLE `deposits` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `address` varchar(60) NOT NULL,
   `amount` decimal(32,8) NOT NULL,
-  `txid` varchar(64) NOT NULL,
+  `txid` varchar(125) NOT NULL,
   `confirmations` int(11) NOT NULL,
   `credited` tinyint(1) unsigned NOT NULL,
   `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
