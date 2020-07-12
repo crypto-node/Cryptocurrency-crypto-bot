@@ -13,6 +13,7 @@ try{
 
 const Big = require('big.js'); // https://github.com/MikeMcl/big.js -> http://mikemcl.github.io/big.js/
 const rp = require('request-promise');
+const { bot } = require('../config');
 
 /* ------------------------------------------------------------------------------ */
 // // // // // // // // // // // // // // // // // // // // // // // // // // // //
@@ -116,14 +117,17 @@ module.exports = {
      },
 
     /* ------------------------------------------------------------------------------ */
-    // Check if the channel is a valid channel to repond to
+    // Check if the channel is a valid channel to respond to or if open to all channels
     /* ------------------------------------------------------------------------------ */
-
     check_respond_channel: function(channelID){
-        var respondChannelIDs = {};
-        for (var i = 0 ; i < config.bot.respondChannelIDs.length ; ++i)
-        respondChannelIDs[config.bot.respondChannelIDs[i]] = true;
-        return respondChannelIDs[channelID];
+        if (config.bot.allowAllChannels == true) {
+            return;
+        } else if(config.bot.allowAllChannels == false) {
+            var respondChannelIDs = {};
+            for (var i = 0 ; i < config.bot.respondChannelIDs.length ; ++i)
+            respondChannelIDs[config.bot.respondChannelIDs[i]] = true;
+            return respondChannelIDs[channelID];
+        }
     },
 
     /* ------------------------------------------------------------------------------ */
