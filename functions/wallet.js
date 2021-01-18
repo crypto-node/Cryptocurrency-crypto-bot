@@ -139,6 +139,29 @@ module.exports = {
             });
         });
     },
+    
+    /* ------------------------------------------------------------------------------ */
+    // Get block
+    /* ------------------------------------------------------------------------------ */
+
+    wallet_get_block: function(blockhash){
+        return new Promise((resolve, reject)=>{
+            coinClient.getBlock(blockhash, function(error, result) {
+                if(error){
+                    var errorMessage = "wallet_get_block: Wallet query problem. (getBlock)";
+                    if(config.bot.errorLogging){
+                        log.log_write_file(errorMessage);
+                        log.log_write_file(error);
+                    }
+                    log.log_write_console(errorMessage);
+                    log.log_write_console(error);
+                    resolve(false);
+                }else{
+                    resolve(result);
+                }   
+            });
+        });
+    },
 
     /* ------------------------------------------------------------------------------ */
     // Get balance
