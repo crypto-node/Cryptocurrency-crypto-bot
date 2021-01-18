@@ -866,18 +866,28 @@ module.exports = {
                     }
                 }else{
                     // If stake
-                    var transaction_amount = Big(getTransaction.amount).toString();
+                    var block = getTransaction.blockhash;
+                    var blockhash = String(block);
+                        log.log_write_console(blockhash);
+
+                    var getBlock = await wallet.wallet_get_block(blockhash);
+                    var getMint = getBlock.mint;
+                    var mint = String(getMint);
+                        log.log_write_console(getMint);
+
+                    var transaction_amount = Big(getBlock.mint).toString();
+
                     var transaction_fee = getTransaction.fee;
-                    var transaction_stake_amount = Big(transaction_amount).plus(transaction_fee);
+                    var transaction_stake_amount = Big(transaction_amount); 
                     var transaction_stake = 1;
                     //log.log_write_console('AMOUNT: '+transaction_amount+' - FEE: '+transaction_fee+' STAKE AMOUNT: '+Big(transaction_stake_amount).toString());
                     // Update transaction on db
                     var updateTransaction = await transaction.transaction_update_stake_transaction(transaction_txid,Big(transaction_stake_amount).toString(),transaction_stake);
                     if(updateTransaction){
                         countTransactionsToCheck++;
-                    }
-                }
-            }
+                       }
+                  }
+               }
             if(i == transactionsToCheck.length-1 && manuallyFired == 1)
                 chat.chat_reply(msg,'embed',userName,messageType,config.colors.special,false,config.messages.getstakes.manually,[[config.messages.getstakes.transactions,countTransactionsToCheck,false]],false,false,false,false,false);
             if(i == transactionsToCheck.length-1 && manuallyFired == 0)
