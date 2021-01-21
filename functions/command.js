@@ -287,8 +287,9 @@ module.exports = {
         }
         // Calculate how much of the stake balance belongs to the users stake balance // Rest balance belongs to wallet as its not market as stake from the users
         var down = 0;
-        var totalStakeForStakers = Big(totalUserStakeBalance).div(walletBalance);
-        totalStakeForStakers = Big(totalStakeForStakers).times(totalStakeSum).round(8, down);
+        // All stakes minus bot owner fee will be distributed between stake pool participants.
+        // Original calculations produce inconsistent ammounts for BlackCoin/NovaCoin forks
+          totalStakeForStakers = Big(totalStakeSum).minus(totalStakeSumMinusOwnerPercentage).round(8, down); 
         // Debug log
         if(config.staking.debug){
             log.log_write_console(config.messages.log.stakecredit5+' '+totalUserStakeBalance);
@@ -859,33 +860,50 @@ module.exports = {
                     log.log_write_console('no stake');
                     var transaction_amount = 0;
                     var transaction_stake = 0;
+
                     // Update transaction on db
                     var updateTransaction = await transaction.transaction_update_stake_transaction(transaction_txid,Big(transaction_amount).toString(),transaction_stake);
                     if(updateTransaction){
                         countTransactionsToCheck++;
                     }
+
+               // Below changes implemented for BlackCoin/NovaCoin forks to allow stake amount (mint) to be grabbed from "getblock" rpc call by, in first place grabbing a "blockhash" from output of transaction 
+               // in question through "gettransaction" rpc call.
+
                 }else{
                     // If stake
                     var block = getTransaction.blockhash;
                     var blockhash = String(block);
                         log.log_write_console(blockhash);
 
-                    var getBlock = await wallet.wallet_get_block(blockhash);
-                    var getMint = getBlock.mint;
-                    var mint = String(getMint);
-                        log.log_write_console(getMint);
+                    if(blockhash == String(undefined)){
+                        log.log_write_console('bogus stake');
+                        var transaction_amount = 0;
+                        var transaction_stake = 0;
+                        // Update transaction on db
+                        var updateTransaction = await transaction.transaction_update_stake_transaction(transaction_txid,Big(transaction_amount).toString(),transaction_stake);
+                        if(updateTransaction){
+                           countTransactionsToCheck++; 
+                        }
+                    }else{
+                        var getBlock = await wallet.wallet_get_block(blockhash);
 
-                    var transaction_amount = Big(getBlock.mint).toString();
+                                    var getMint = getBlock.mint;
+                                    var mint = String(getMint);
+                                    log.log_write_console(getMint);
 
-                    var transaction_fee = getTransaction.fee;
-                    var transaction_stake_amount = Big(transaction_amount); 
-                    var transaction_stake = 1;
-                    //log.log_write_console('AMOUNT: '+transaction_amount+' - FEE: '+transaction_fee+' STAKE AMOUNT: '+Big(transaction_stake_amount).toString());
-                    // Update transaction on db
-                    var updateTransaction = await transaction.transaction_update_stake_transaction(transaction_txid,Big(transaction_stake_amount).toString(),transaction_stake);
-                    if(updateTransaction){
-                        countTransactionsToCheck++;
-                       }
+                                    var transaction_amount = Big(getBlock.mint).toString();
+
+                                    var transaction_fee = getTransaction.fee;
+                                    var transaction_stake_amount = Big(transaction_amount); 
+                                    var transaction_stake = 1;
+                                      //log.log_write_console('AMOUNT: '+transaction_amount+' - FEE: '+transaction_fee+' STAKE AMOUNT: '+Big(transaction_stake_amount).toString());
+                                     // Update transaction on db
+                                    var updateTransaction = await transaction.transaction_update_stake_transaction(transaction_txid,Big(transaction_stake_amount).toString(),transaction_stake);
+                                        if(updateTransaction){
+                                        countTransactionsToCheck++;
+                                        }
+                      }
                   }
                }
             if(i == transactionsToCheck.length-1 && manuallyFired == 1)
