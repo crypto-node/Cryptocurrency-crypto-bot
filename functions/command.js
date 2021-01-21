@@ -288,7 +288,7 @@ module.exports = {
         // Calculate how much of the stake balance belongs to the users stake balance // Rest balance belongs to wallet as its not market as stake from the users
         var down = 0;
         // All stakes minus bot owner fee will be distributed between stake pool participants.
-        // Original calculations produce inconsistent ammounts for BlackCoin/NovaCoin forks
+        // Original calculations produce inconsistent amounts for BlackCoin/NovaCoin forks
           totalStakeForStakers = Big(totalStakeSum).minus(totalStakeSumMinusOwnerPercentage).round(8, down); 
         // Debug log
         if(config.staking.debug){
