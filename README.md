@@ -1,5 +1,8 @@
 # Cryptocurrency-crypto-bot is an open-source Node.js wallet bot for Discord.
 
+## This version has adjustments to work with BlackCoin / NovaCoin forks. 
+#### Currently in use with DiminutiveVaultCoin (DIMI) and InfiniLooP (IL8P)
+
 ### Preview pictures
 <img src="https://user-images.githubusercontent.com/8712219/69255023-68990180-0bb7-11ea-8e15-755491968a5e.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/8712219/69255024-68990180-0bb7-11ea-9ce4-f962a17f6a0a.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/8712219/69255026-69319800-0bb7-11ea-9f9e-acd0883a0d1d.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/8712219/69255027-69319800-0bb7-11ea-85ad-f93b84c9c475.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/8712219/69255028-69ca2e80-0bb7-11ea-81e6-ae11149e539a.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/8712219/69255030-69ca2e80-0bb7-11ea-86b4-4965995a4438.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/8712219/69255034-6a62c500-0bb7-11ea-8c0e-a9117234cda6.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/8712219/69255037-6afb5b80-0bb7-11ea-88b2-3806c594639e.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/8712219/69255039-6b93f200-0bb7-11ea-82f7-1dd738795eb1.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/8712219/69255040-6c2c8880-0bb7-11ea-95a9-9d4d44401de5.jpg" width="45%"></img> <img src="https://user-images.githubusercontent.com/8712219/69255043-6cc51f00-0bb7-11ea-8818-f2bc151f1fbd.jpg" width="45%"></img> 
 
